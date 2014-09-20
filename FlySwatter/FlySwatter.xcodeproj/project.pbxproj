@@ -14,6 +14,7 @@
 		B5139E0B19CD3922004D517A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5139E0A19CD3922004D517A /* Images.xcassets */; };
 		B5139E0E19CD3922004D517A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5139E0C19CD3922004D517A /* LaunchScreen.xib */; };
 		B5139E1A19CD3922004D517A /* FlySwatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139E1919CD3922004D517A /* FlySwatterTests.m */; };
+		B5139E2519CD666D004D517A /* OAuthControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139E2419CD666D004D517A /* OAuthControllerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		B5139E1319CD3922004D517A /* FlySwatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlySwatterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5139E1819CD3922004D517A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5139E1919CD3922004D517A /* FlySwatterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlySwatterTests.m; sourceTree = "<group>"; };
+		B5139E2319CD666D004D517A /* OAuthControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthControllerViewController.h; sourceTree = "<group>"; };
+		B5139E2419CD666D004D517A /* OAuthControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthControllerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				B5139E0419CD3922004D517A /* ViewController.h */,
 				B5139E0519CD3922004D517A /* ViewController.m */,
 				B5139E0719CD3922004D517A /* Main.storyboard */,
+				B5139E2319CD666D004D517A /* OAuthControllerViewController.h */,
+				B5139E2419CD666D004D517A /* OAuthControllerViewController.m */,
 				B5139E0A19CD3922004D517A /* Images.xcassets */,
 				B5139E0C19CD3922004D517A /* LaunchScreen.xib */,
 				B5139DFD19CD3922004D517A /* Supporting Files */,
@@ -221,6 +226,7 @@
 			files = (
 				B5139E0619CD3922004D517A /* ViewController.m in Sources */,
 				B5139E0319CD3922004D517A /* AppDelegate.m in Sources */,
+				B5139E2519CD666D004D517A /* OAuthControllerViewController.m in Sources */,
 				B5139E0019CD3922004D517A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

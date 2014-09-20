@@ -24,7 +24,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2fl-Yw-6dn" kind="show" id="qVh-Pu-bPU"/>
+                                    <segue destination="2fl-Yw-6dn" kind="modal" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="qVh-Pu-bPU"/>
                                 </connections>
                             </button>
                         </subviews>

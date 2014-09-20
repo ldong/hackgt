@@ -1,0 +1,5 @@
+platform :ios, '7.0'
+
+pod 'TesseractOCRiOS', '~> 2.2'
+
+xcodeproj 'FlySwatter.xcodeproj'

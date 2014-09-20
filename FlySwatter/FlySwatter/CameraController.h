@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TesseractOCR/TesseractOCR.h>
 
 @interface CameraController : UIViewController
-<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+<UIImagePickerControllerDelegate, UINavigationControllerDelegate, TesseractDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *myImage;
 
+@property (weak, nonatomic) IBOutlet UIButton *captureButton;
 @property (strong, nonatomic) UIImagePickerController * imagePicker;
 
 - (IBAction)pickImage:(id)sender;

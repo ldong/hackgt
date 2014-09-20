@@ -2,7 +2,6 @@
 
 ## Installation
 
-1. `npm install ionic`
+1. `npm install -g cordova ionic`
 
-2. `npm install cordova`
 

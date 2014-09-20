@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Lin Dong. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CameraController.h"
 
-@interface ViewController ()
+@interface CameraController ()
 
 @end
 
-@implementation ViewController
+@implementation CameraController
 @synthesize myImage, imagePicker;
 
 - (void)viewDidLoad {

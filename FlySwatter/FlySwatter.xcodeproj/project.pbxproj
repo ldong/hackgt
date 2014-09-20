@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B5139E0019CD3922004D517A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139DFF19CD3922004D517A /* main.m */; };
 		B5139E0319CD3922004D517A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139E0219CD3922004D517A /* AppDelegate.m */; };
-		B5139E0619CD3922004D517A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139E0519CD3922004D517A /* ViewController.m */; };
+		B5139E0619CD3922004D517A /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139E0519CD3922004D517A /* CameraController.m */; };
 		B5139E0919CD3922004D517A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5139E0719CD3922004D517A /* Main.storyboard */; };
 		B5139E0B19CD3922004D517A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5139E0A19CD3922004D517A /* Images.xcassets */; };
 		B5139E0E19CD3922004D517A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5139E0C19CD3922004D517A /* LaunchScreen.xib */; };
@@ -32,8 +32,8 @@
 		B5139DFF19CD3922004D517A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5139E0119CD3922004D517A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5139E0219CD3922004D517A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B5139E0419CD3922004D517A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B5139E0519CD3922004D517A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B5139E0419CD3922004D517A /* CameraController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
+		B5139E0519CD3922004D517A /* CameraController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
 		B5139E0819CD3922004D517A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5139E0A19CD3922004D517A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5139E0D19CD3922004D517A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -83,8 +83,8 @@
 			children = (
 				B5139E0119CD3922004D517A /* AppDelegate.h */,
 				B5139E0219CD3922004D517A /* AppDelegate.m */,
-				B5139E0419CD3922004D517A /* ViewController.h */,
-				B5139E0519CD3922004D517A /* ViewController.m */,
+				B5139E0419CD3922004D517A /* CameraController.h */,
+				B5139E0519CD3922004D517A /* CameraController.m */,
 				B5139E0719CD3922004D517A /* Main.storyboard */,
 				B5139E0A19CD3922004D517A /* Images.xcassets */,
 				B5139E0C19CD3922004D517A /* LaunchScreen.xib */,
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5139E0619CD3922004D517A /* ViewController.m in Sources */,
+				B5139E0619CD3922004D517A /* CameraController.m in Sources */,
 				B5139E0319CD3922004D517A /* AppDelegate.m in Sources */,
 				B5139E0019CD3922004D517A /* main.m in Sources */,
 			);
@@ -414,6 +414,7 @@
 				B5139E1F19CD3922004D517A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5139E2019CD3922004D517A /* Build configuration list for PBXNativeTarget "FlySwatterTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +423,7 @@
 				B5139E2219CD3922004D517A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

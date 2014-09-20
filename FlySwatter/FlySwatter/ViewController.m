@@ -13,6 +13,7 @@
 @end
 
 @implementation ViewController
+@synthesize myImage, imagePicker;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -24,4 +25,29 @@
   // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)pickImage:(id)sender {
+    imagePicker = [[UIImagePickerController alloc]init];
+    
+    //Set the delegate
+    imagePicker.delegate = self;
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }else{
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentModalViewController:imagePicker animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    myImage.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissModalViewControllerAnimated:YES];
+}
 @end

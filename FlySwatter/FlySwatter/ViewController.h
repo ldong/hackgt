@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *myImage;
+
+@property (strong, nonatomic) UIImagePickerController * imagePicker;
+
+- (IBAction)pickImage:(id)sender;
 
 @end
 

@@ -11,12 +11,16 @@
 
 @interface CameraController : UIViewController
 <UIImagePickerControllerDelegate, UINavigationControllerDelegate, TesseractDelegate>
-
+@property (weak, nonatomic) IBOutlet UITextView *infoData;
+@property (weak, nonatomic) IBOutlet UIButton *accept;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *captureButton;
 @property (strong, nonatomic) UIImagePickerController * imagePicker;
 
 - (IBAction)pickImage:(id)sender;
+- (IBAction)cancelImage:(id)sender;
+- (UIImage *)convertImageToGrayScale:(UIImage *)image;
 
 @end
 

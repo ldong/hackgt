@@ -67,11 +67,11 @@
 
 - (IBAction)addToCalendar:(id)sender {
   NSLog(@"?addToCalendar?");
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Waiting"
-                                                  message: @"Syncing with iCloud"
-                                                 delegate: nil cancelButtonTitle:@"OK"
-                                        otherButtonTitles:nil];
-  [alert show];
+//  UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Waiting"
+//                                                  message: @"Syncing with iCloud"
+//                                                 delegate: nil cancelButtonTitle:@"OK"
+//                                        otherButtonTitles:nil];
+//  [alert show];
 
   EKEventStore *eventStore = [[EKEventStore alloc] init];
   if ([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
@@ -103,7 +103,7 @@
      if (granted)
      {
        EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
-       NSString * NoteDetails =@"Event detail";
+       NSString * NoteDetails =@"This will be the details of the event";
        
        NSDate *startDate = [NSDate date];
        
@@ -115,11 +115,11 @@
                                                                        toDate:startDate
                                                                       options:0];
        
-       event.title =@"Your Event TITLE";
+       event.title =@"Event title";
        event.startDate=startDate;
        //             event.endDate=endDate;
        event.endDate = [event.startDate dateByAddingTimeInterval:60*60];
-       event.notes = @"appointmentDetail";
+       event.notes = @"the details of the event, any notes will will be here";
        event.allDay=NO;
        
        [event setCalendar:[eventStore defaultCalendarForNewEvents]];
@@ -129,7 +129,7 @@
        
        if(!error){
          UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Hi there"
-                                                         message: @"Your event is been added"
+                                                         message: @"Your event has been added"
                                                         delegate: nil cancelButtonTitle:@"OK"
                                                otherButtonTitles:nil];
         [alert show];

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySwatter/CameraController.m"
-            timestampString = "432986388.881611"
+            timestampString = "432995704.972324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
+            startingLineNumber = "410"
+            endingLineNumber = "410"
             landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySwatter/CameraController.m"
-            timestampString = "432986388.881611"
+            timestampString = "432995704.972324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -57,7 +57,7 @@
                   symbolName = "-[NewViewController twitterButton]"
                   moduleName = "FlySwatter"
                   urlString = "file:///Users/ldong/hackgt/FlySwatter/FlySwatter/NewViewController.h"
-                  timestampString = "432978282.303134"
+                  timestampString = "432995194.609518"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -71,7 +71,7 @@
                   symbolName = "-[NewViewController setTwitterButton:]"
                   moduleName = "FlySwatter"
                   urlString = "file:///Users/ldong/hackgt/FlySwatter/FlySwatter/NewViewController.h"
-                  timestampString = "432978282.303435"
+                  timestampString = "432995194.609663"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -79,6 +79,22 @@
                   offsetFromSymbolStart = "22">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySwatter/CameraController.m"
+            timestampString = "432995704.972324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "422"
+            endingLineNumber = "422"
+            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

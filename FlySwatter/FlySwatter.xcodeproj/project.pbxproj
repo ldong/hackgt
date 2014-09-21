@@ -44,6 +44,10 @@
 		B5D5152319CE9E7E007B8041 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D5151D19CE9E7E007B8041 /* twitter.png */; };
 		B5D5152619CEA751007B8041 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D5152519CEA751007B8041 /* NewViewController.m */; };
 		B5E2DA8219CECCC500E5ADB9 /* libPods-FHTTPClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E2DA8119CECCC500E5ADB9 /* libPods-FHTTPClient.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		B5E2DAC319CEEC7700E5ADB9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E2DAC219CEEC7700E5ADB9 /* CFNetwork.framework */; };
+		B5E2DAC519CEEC8A00E5ADB9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E2DAC419CEEC8A00E5ADB9 /* SystemConfiguration.framework */; };
+		B5E2DAC719CEEC9100E5ADB9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E2DAC619CEEC9100E5ADB9 /* MobileCoreServices.framework */; };
+		B5E2DAC919CEEC9900E5ADB9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E2DAC819CEEC9900E5ADB9 /* libz.dylib */; };
 		BB4F57926BE54DFD83356DC5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E064934393654BE18F1E74C6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +79,27 @@
 			proxyType = 2;
 			remoteGlobalIDString = 822A2CE9A5CF48869798A720;
 			remoteInfo = "Pods-FHTTPClient";
+		};
+		B5E2DA8819CEDB9900E5ADB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A6449319CDBBB3008BBA6B /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46F331A62DC74F458DFC76E0;
+			remoteInfo = "Pods-AFNetworking";
+		};
+		B5E2DA8A19CEDB9900E5ADB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A6449319CDBBB3008BBA6B /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07E9D28C125B428482B92EAF;
+			remoteInfo = "Pods-MKNetworkKit";
+		};
+		B5E2DA8C19CEDB9900E5ADB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A6449319CDBBB3008BBA6B /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 40C53836A7EB4B88BAEF720E;
+			remoteInfo = "Pods-Reachability";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -562,6 +587,10 @@
 		B5D5151D19CE9E7E007B8041 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		B5D5152419CEA751007B8041 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
 		B5D5152519CEA751007B8041 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		B5E2DAC219CEEC7700E5ADB9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B5E2DAC419CEEC8A00E5ADB9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B5E2DAC619CEEC9100E5ADB9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B5E2DAC819CEEC9900E5ADB9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		E064934393654BE18F1E74C6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15BF3BCB8B44B69A6B596E9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -571,9 +600,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B581CFB219CE17C900E23EC2 /* CoreGraphics.framework in Frameworks */,
+				B5E2DAC919CEEC9900E5ADB9 /* libz.dylib in Frameworks */,
+				B5E2DAC719CEEC9100E5ADB9 /* MobileCoreServices.framework in Frameworks */,
+				B5E2DAC519CEEC8A00E5ADB9 /* SystemConfiguration.framework in Frameworks */,
+				B5E2DAC319CEEC7700E5ADB9 /* CFNetwork.framework in Frameworks */,
 				B5E2DA8219CECCC500E5ADB9 /* libPods-FHTTPClient.a in Frameworks */,
 				B581CFB419CE17F000E23EC2 /* Foundation.framework in Frameworks */,
-				B581CFB219CE17C900E23EC2 /* CoreGraphics.framework in Frameworks */,
 				B581CFB019CE176400E23EC2 /* UIKit.framework in Frameworks */,
 				B5A6454719CDD07A008BBA6B /* CoreImage.framework in Frameworks */,
 				B5A6453D19CDBBB3008BBA6B /* liblept.a in Frameworks */,
@@ -597,6 +630,10 @@
 		5FC3D2DB4D024112BE44C658 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5E2DAC819CEEC9900E5ADB9 /* libz.dylib */,
+				B5E2DAC619CEEC9100E5ADB9 /* MobileCoreServices.framework */,
+				B5E2DAC419CEEC8A00E5ADB9 /* SystemConfiguration.framework */,
+				B5E2DAC219CEEC7700E5ADB9 /* CFNetwork.framework */,
 				B581CFB319CE17F000E23EC2 /* Foundation.framework */,
 				B581CFB119CE17C900E23EC2 /* CoreGraphics.framework */,
 				B581CFAF19CE176400E23EC2 /* UIKit.framework */,
@@ -1024,7 +1061,10 @@
 			isa = PBXGroup;
 			children = (
 				B5A6454219CDBBB3008BBA6B /* libPods.a */,
+				B5E2DA8919CEDB9900E5ADB9 /* libPods-AFNetworking.a */,
 				B5E2DA8119CECCC500E5ADB9 /* libPods-FHTTPClient.a */,
+				B5E2DA8B19CEDB9900E5ADB9 /* libPods-MKNetworkKit.a */,
+				B5E2DA8D19CEDB9900E5ADB9 /* libPods-Reachability.a */,
 				B5A6454419CDBBB3008BBA6B /* libPods-TesseractOCRiOS.a */,
 			);
 			name = Products;
@@ -1350,6 +1390,27 @@
 			fileType = archive.ar;
 			path = "libPods-FHTTPClient.a";
 			remoteRef = B5E2DA8019CECCC500E5ADB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5E2DA8919CEDB9900E5ADB9 /* libPods-AFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-AFNetworking.a";
+			remoteRef = B5E2DA8819CEDB9900E5ADB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5E2DA8B19CEDB9900E5ADB9 /* libPods-MKNetworkKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-MKNetworkKit.a";
+			remoteRef = B5E2DA8A19CEDB9900E5ADB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5E2DA8D19CEDB9900E5ADB9 /* libPods-Reachability.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-Reachability.a";
+			remoteRef = B5E2DA8C19CEDB9900E5ADB9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

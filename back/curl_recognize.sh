@@ -88,7 +88,7 @@ echo "Recognizing $sourceFileName with $Language language. Result will be saved 
 
 echo "Uploading.."
 response=`curl -s -S --user "$ApplicationId:$Password" --form "upload=@$SourceFile" "$ServerUrl/processImage?exportFormat=$OutFormat&language=$Language"`
-
+echo $response
 
 #Select guid from response string
 taskId=`echo $response | grep -o -E 'task id="[^"]*"' | cut -d '"' -f 2`

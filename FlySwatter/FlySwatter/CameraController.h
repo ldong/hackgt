@@ -33,6 +33,6 @@
 //- (UIImage *)convertImageToGrayScale:(UIImage *)image;
 - (IBAction)shareWithTwitter:(id)sender;
 - (IBAction)shareWithFacebook:(id)sender;
-
++ (BOOL)uploadImage:(UIImage *)image withName:(NSString *)fileName toURL:(NSURL *)url;
 @end
 

@@ -10,6 +10,10 @@
 #import "UIImage+Filters.h"
 #import "FHTTPClient.h"
 #import "AFNetworking.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "AFHTTPSessionManager.h"
+
+//#import "Client.h"
 
 @interface CameraController ()
 
@@ -20,6 +24,7 @@
 @implementation CameraController
 //@synthesize imagePicker, infoData, accept, captureButton, cancelButton, imageView;
 @synthesize imagePicker, infoData, accept, captureButton, cancelButton, imageView, facebookButton, twitterButton, store, spin;
+NSString* imagePath;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -55,44 +60,28 @@
   //  }else{
   imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
   //  }
-  
+  imagePath = UIImagePickerControllerMediaURL;
+  //imagePath = [info valueForKey:UIImagePickerControllerReferenceURL];
   [self presentModalViewController:imagePicker animated:YES];
   
 }
 
 - (void) uploadfileOnline: (UIImage *)image {
-//  UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-  NSString* webURL = @"http://httpbin.org/ip";
-  NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+
+  NSString* webURL = @"http://128.61.60.170:3000/";
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  NSDictionary *parameters = @{@"Name": @"LDONG"};
-
-  if (image != nil)
-  {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                         NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                      @"test.jpg" ];
-    NSData* data = UIImagePNGRepresentation(image);
-    [data writeToFile:path atomically:YES];
-    
-    NSURL *filePath = [NSURL fileURLWithPath:path];
-    [manager POST:webURL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-      [formData appendPartWithFormData:imageData name:@"image"];
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-      NSLog(@"Success: %@", responseObject);
-      // parse data
-      infoData.text = responseObject;
-//      self.data = (NSMutableDictionary*)responseObject;
-      // {"data": text };
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-      NSLog(@"Error: %@", error);
-      infoData.text = error.description;
-    }];
-  }
+  NSDictionary *parameters = @{@"foo": @"bar"};
   
-
+  NSURL *filePath = [NSURL fileURLWithPath:imagePath];
+  [manager POST:webURL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [formData appendPartWithFileURL:filePath name:@"image" error:nil];
+  } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSLog(@"Success: %@", responseObject);
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"Error: %@", error);
+  }];
+  
+  NSLog(@"Sent something");
   
 }
 
@@ -199,22 +188,16 @@
 
 
 - (IBAction)shareWithTwitter:(id)sender {
-  if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-  {
-    SLComposeViewController *tweetSheet = [SLComposeViewController
-                                           composeViewControllerForServiceType:SLServiceTypeTwitter];
+  if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+    SLComposeViewController *tweetSheet = [SLComposeViewController                                           composeViewControllerForServiceType:SLServiceTypeTwitter];
     [tweetSheet setInitialText:infoData.text];
-    
     [self presentViewController:tweetSheet animated:YES completion:nil];
   } else {
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
-    { SLComposeViewController *tweetSheet = [SLComposeViewController
-                                             composeViewControllerForServiceType:SLServiceTypeTwitter];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+      SLComposeViewController *tweetSheet = [SLComposeViewController
+          composeViewControllerForServiceType:SLServiceTypeTwitter];
       [tweetSheet setInitialText:infoData.text];
-      
       [self presentViewController:tweetSheet animated:YES completion:nil];
-      
-      
       //inform the user that no account is configured with alarm view.
     }
     
@@ -446,4 +429,8 @@
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
   [self dismissModalViewControllerAnimated:YES];
 }
+
+
+
+
 @end

@@ -1,21 +1,19 @@
 //
-//  ViewController.m
+//  NewViewController.m
 //  FlySwatter
 //
-//  Created by Lin Dong on 9/20/14.
+//  Created by Lin Dong on 9/21/14.
 //  Copyright (c) 2014 Lin Dong. All rights reserved.
 //
 
-#import "CameraController.h"
-#import "UIImage+Filters.h"
+#import "NewViewController.h"
 
-@interface CameraController ()
+@interface NewViewController ()
 
 @end
 
-@implementation CameraController
-//@synthesize imagePicker, infoData, accept, captureButton, cancelButton, imageView;
-@synthesize imagePicker, infoData, accept, captureButton, cancelButton, imageView, facebookButton, twitterButton, store, spin;
+@implementation NewViewController
+@synthesize imagePicker, infoData, accept, captureButton, cancelButton, imageView, facebookButton, twitterButton, store;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -23,15 +21,14 @@
   accept.hidden = true;
   infoData.hidden = true;
   cancelButton.hidden = true;
-  facebookButton.hidden = true;
-  twitterButton.hidden = true;
-  spin.hidden = true;
   
   [captureButton setImage:[UIImage imageWithContentsOfFile:@"./icons/camera.png"] forState: UIControlStateNormal];
   [cancelButton setImage:[UIImage imageWithContentsOfFile:@"./icons/error.png"] forState: UIControlStateNormal];
   [facebookButton setImage:[UIImage imageWithContentsOfFile:@"./icons/facebook.png"] forState: UIControlStateNormal];
   [twitterButton setImage:[UIImage imageWithContentsOfFile:@"./icons/twitter.png"] forState: UIControlStateNormal];
   [accept setImage:[UIImage imageWithContentsOfFile:@"icons/check.png"] forState: UIControlStateNormal];
+  
+  facebookButton.hidden = false;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,19 +57,10 @@
   cancelButton.hidden = true;
   infoData.hidden = true;
   captureButton.hidden = false;
-  facebookButton.hidden = true;
-  twitterButton.hidden = true;
-  spin.hidden = true;
 }
 
 - (IBAction)addToCalendar:(id)sender {
   NSLog(@"?addToCalendar?");
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Waiting"
-                                                  message: @"Syncing with iCloud"
-                                                 delegate: nil cancelButtonTitle:@"OK"
-                                        otherButtonTitles:nil];
-  [alert show];
-
   EKEventStore *eventStore = [[EKEventStore alloc] init];
   if ([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
     // iOS 6 and later
@@ -91,7 +79,6 @@
     //        [self addEventToCalendar:@" "];
     NSLog(@"iOS < 6.0");
   }
-  spin.hidden = true;
   //    [self addEventToCalendar:@" "];
 }
 
@@ -132,9 +119,9 @@
                                                          message: @"Your event is been added"
                                                         delegate: nil cancelButtonTitle:@"OK"
                                                otherButtonTitles:nil];
-        [alert show];
-        
+         [alert show];
        }
+       
      }
      else
      {
@@ -153,14 +140,14 @@
   {
     SLComposeViewController *tweetSheet = [SLComposeViewController
                                            composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [tweetSheet setInitialText:infoData.text];
+    [tweetSheet setInitialText:@"Hello a Tweet"];
     
     [self presentViewController:tweetSheet animated:YES completion:nil];
   } else {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
     { SLComposeViewController *tweetSheet = [SLComposeViewController
                                              composeViewControllerForServiceType:SLServiceTypeTwitter];
-      [tweetSheet setInitialText:infoData.text];
+      [tweetSheet setInitialText:@"Hello a Tweet"];
       
       [self presentViewController:tweetSheet animated:YES completion:nil];
       
@@ -177,15 +164,15 @@
     NSLog(@"HI FB");
     SLComposeViewController*fvc = [SLComposeViewController
                                    composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [fvc setInitialText:infoData.text];
-    [fvc addImage:[UIImage imageNamed:@"hackGT rocks"]];
+    [fvc setInitialText:@"Lhasa"];
+    [fvc addImage:[UIImage imageNamed:@"lhasa"]];
     [self presentViewController:fvc animated:YES completion:nil];
   } else {
     NSLog(@"No FB");
     SLComposeViewController * fbSheetOBJ = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [fbSheetOBJ setInitialText:@"Post from my iOS"];
-    [fbSheetOBJ addURL:[NSURL URLWithString:@"http://hackgt.com"]];
-    [fbSheetOBJ addImage:[UIImage imageNamed:@"klaus.png"]];
+    [fbSheetOBJ setInitialText:@"Post from my iOS application"];
+    [fbSheetOBJ addURL:[NSURL URLWithString:@"http://www.weblineindia.com"]];
+    [fbSheetOBJ addImage:[UIImage imageNamed:@"my_image_to_share.png"]];
     
     [self presentViewController:fbSheetOBJ animated:YES completion:Nil];
   }
@@ -319,52 +306,52 @@
   CIImage *afterMono, *afterBlur;
   UIImage *fixedImage = [self scaleAndRotateImage:myImage];
   CIImage *inputImage = [[CIImage alloc] initWithImage:fixedImage];
-
-//  CIImage *inputImage = [[CIImage alloc] initWithCGImage:myImage.CGImage];
-//  CIContext *context = [CIContext contextWithOptions:nil];
-//  CIFilter *random = [CIFilter filterWithName:@"CIRandomGenerator"];
-//  //UIImage *randomFilter = [UIImage imageWithCIImage:random.outputImage];
-//  
-//  CIImage* result = random.outputImage;
-//  CGImageRef cgiimage = [context createCGImage:result fromRect:[result extent]];
-//  
-//  //assume beginImage is CIImage you want to tint
-//  CIImage* outputImage = nil;
-//  
-//  //create some blue
-//  CIFilter* blueGenerator = [CIFilter filterWithName:@"CIConstantColorGenerator"];
-//  CIColor* blue = [CIColor colorWithString:@"0.1 0.5 0.8 1.0"];
-//  [blueGenerator setValue:blue forKey:@"inputColor"];
-//  CIImage* blueImage = [blueGenerator valueForKey:@"outputImage"];
-//  
-//  //apply a multiply filter
-//  CIFilter* filterm = [CIFilter filterWithName:@"CIMultiplyCompositing"];
-//  [filterm setValue:blueImage forKey:@"inputImage"];
-//  [filterm setValue:inputImage forKey:@"inputBackgroundImage"];
-//  outputImage = [filterm valueForKey:@"outputImage"];
-//  
-//  UIImage *resultUIImage = [UIImage imageWithCIImage:outputImage];
-//  
-//  imageView.image = resultUIImage;
-//  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//    UIImageWriteToSavedPhotosAlbum(resultUIImage, nil, nil, nil);
-//  });x
   
-//  CIFilter *monoEffectFilter = [CIFilter filterWithName:@"CIPhotoEffectMono"];
-//  [monoEffectFilter setDefaults];
-//  [monoEffectFilter setValue:inputImage forKey:kCIInputImageKey];
-//  afterMono = monoEffectFilter.outputImage;
-
+  //  CIImage *inputImage = [[CIImage alloc] initWithCGImage:myImage.CGImage];
+  //  CIContext *context = [CIContext contextWithOptions:nil];
+  //  CIFilter *random = [CIFilter filterWithName:@"CIRandomGenerator"];
+  //  //UIImage *randomFilter = [UIImage imageWithCIImage:random.outputImage];
+  //
+  //  CIImage* result = random.outputImage;
+  //  CGImageRef cgiimage = [context createCGImage:result fromRect:[result extent]];
+  //
+  //  //assume beginImage is CIImage you want to tint
+  //  CIImage* outputImage = nil;
+  //
+  //  //create some blue
+  //  CIFilter* blueGenerator = [CIFilter filterWithName:@"CIConstantColorGenerator"];
+  //  CIColor* blue = [CIColor colorWithString:@"0.1 0.5 0.8 1.0"];
+  //  [blueGenerator setValue:blue forKey:@"inputColor"];
+  //  CIImage* blueImage = [blueGenerator valueForKey:@"outputImage"];
+  //
+  //  //apply a multiply filter
+  //  CIFilter* filterm = [CIFilter filterWithName:@"CIMultiplyCompositing"];
+  //  [filterm setValue:blueImage forKey:@"inputImage"];
+  //  [filterm setValue:inputImage forKey:@"inputBackgroundImage"];
+  //  outputImage = [filterm valueForKey:@"outputImage"];
+  //
+  //  UIImage *resultUIImage = [UIImage imageWithCIImage:outputImage];
+  //
+  //  imageView.image = resultUIImage;
+  //  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+  //    UIImageWriteToSavedPhotosAlbum(resultUIImage, nil, nil, nil);
+  //  });x
   
-//  CIFilter *gaussianBlur = [CIFilter filterWithName:@"CIGaussianBlur"];
-//  [gaussianBlur setDefaults];
-//  [gaussianBlur setValue: afterMono forKey:kCIInputImageKey];
-//  [gaussianBlur setValue: @500.0f forKey:kCIInputRadiusKey];
-////  afterBlur = gaussianBlur.outputImage;
-//
-//  UIImage *resultUIImage = [UIImage imageWithCIImage: afterMono];
-//  imageView.image = resultUIImage;
-//  UIImageWriteToSavedPhotosAlbum(resultUIImage, nil, nil, nil);
+  //  CIFilter *monoEffectFilter = [CIFilter filterWithName:@"CIPhotoEffectMono"];
+  //  [monoEffectFilter setDefaults];
+  //  [monoEffectFilter setValue:inputImage forKey:kCIInputImageKey];
+  //  afterMono = monoEffectFilter.outputImage;
+  
+  
+  //  CIFilter *gaussianBlur = [CIFilter filterWithName:@"CIGaussianBlur"];
+  //  [gaussianBlur setDefaults];
+  //  [gaussianBlur setValue: afterMono forKey:kCIInputImageKey];
+  //  [gaussianBlur setValue: @500.0f forKey:kCIInputRadiusKey];
+  ////  afterBlur = gaussianBlur.outputImage;
+  //
+  //  UIImage *resultUIImage = [UIImage imageWithCIImage: afterMono];
+  //  imageView.image = resultUIImage;
+  //  UIImageWriteToSavedPhotosAlbum(resultUIImage, nil, nil, nil);
   
   Tesseract* tesseract = [[Tesseract alloc] initWithDataPath:@"tessdata" language:@"eng"];
   [tesseract setImage:myImage];
@@ -380,8 +367,6 @@
   accept.hidden = false;
   infoData.hidden = false;
   cancelButton.hidden = false;
-  facebookButton.hidden = false;
-  twitterButton.hidden = false;
   
   //  UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
@@ -389,4 +374,15 @@
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
   [self dismissModalViewControllerAnimated:YES];
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
 @end

@@ -10,7 +10,7 @@
 		B5139E0019CD3922004D517A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139DFF19CD3922004D517A /* main.m */; };
 		B5139E0319CD3922004D517A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139E0219CD3922004D517A /* AppDelegate.m */; };
 		B5139E0619CD3922004D517A /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139E0519CD3922004D517A /* CameraController.m */; };
-		B5139E0919CD3922004D517A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5139E0719CD3922004D517A /* Main.storyboard */; };
+		B5139E0919CD3922004D517A /* 2Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5139E0719CD3922004D517A /* 2Main.storyboard */; };
 		B5139E0B19CD3922004D517A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5139E0A19CD3922004D517A /* Images.xcassets */; };
 		B5139E0E19CD3922004D517A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5139E0C19CD3922004D517A /* LaunchScreen.xib */; };
 		B5139E1A19CD3922004D517A /* FlySwatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5139E1919CD3922004D517A /* FlySwatterTests.m */; };
@@ -35,6 +35,14 @@
 		B5A6454719CDD07A008BBA6B /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A6454619CDD07A008BBA6B /* CoreImage.framework */; };
 		B5A6454A19CDD8D6008BBA6B /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = B5A6454919CDD8D6008BBA6B /* tessdata */; };
 		B5A6454D19CE0179008BBA6B /* UIImage+Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A6454C19CE0179008BBA6B /* UIImage+Filters.m */; };
+		B5D5151019CE6175007B8041 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D5150F19CE6175007B8041 /* Main.storyboard */; };
+		B5D5151E19CE9E7E007B8041 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D5151819CE9E7E007B8041 /* camera.png */; };
+		B5D5151F19CE9E7E007B8041 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D5151919CE9E7E007B8041 /* check.png */; };
+		B5D5152019CE9E7E007B8041 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D5151A19CE9E7E007B8041 /* error.png */; };
+		B5D5152119CE9E7E007B8041 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D5151B19CE9E7E007B8041 /* facebook.png */; };
+		B5D5152219CE9E7E007B8041 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D5151C19CE9E7E007B8041 /* loading.png */; };
+		B5D5152319CE9E7E007B8041 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D5151D19CE9E7E007B8041 /* twitter.png */; };
+		B5D5152619CEA751007B8041 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D5152519CEA751007B8041 /* NewViewController.m */; };
 		BB4F57926BE54DFD83356DC5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E064934393654BE18F1E74C6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +77,7 @@
 		B5139E0119CD3922004D517A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5139E0219CD3922004D517A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B5139E0519CD3922004D517A /* CameraController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
-		B5139E0819CD3922004D517A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5139E0819CD3922004D517A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/2Main.storyboard; sourceTree = "<group>"; };
 		B5139E0A19CD3922004D517A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5139E0D19CD3922004D517A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B5139E1319CD3922004D517A /* FlySwatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlySwatterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -537,6 +545,15 @@
 		B5A6454919CDD8D6008BBA6B /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		B5A6454B19CE0179008BBA6B /* UIImage+Filters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filters.h"; sourceTree = "<group>"; };
 		B5A6454C19CE0179008BBA6B /* UIImage+Filters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Filters.m"; sourceTree = "<group>"; };
+		B5D5150F19CE6175007B8041 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B5D5151819CE9E7E007B8041 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		B5D5151919CE9E7E007B8041 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		B5D5151A19CE9E7E007B8041 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
+		B5D5151B19CE9E7E007B8041 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		B5D5151C19CE9E7E007B8041 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		B5D5151D19CE9E7E007B8041 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		B5D5152419CEA751007B8041 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		B5D5152519CEA751007B8041 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
 		E064934393654BE18F1E74C6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15BF3BCB8B44B69A6B596E9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -583,6 +600,7 @@
 		B5139DF119CD3922004D517A = {
 			isa = PBXGroup;
 			children = (
+				B5D5151719CE9E7E007B8041 /* icons */,
 				B5A6454919CDD8D6008BBA6B /* tessdata */,
 				B5A6434D19CDB513008BBA6B /* libstdc++.6.0.9.dylib */,
 				B5139DFC19CD3922004D517A /* FlySwatter */,
@@ -612,12 +630,15 @@
 				B5139E0519CD3922004D517A /* CameraController.m */,
 				B5A6454B19CE0179008BBA6B /* UIImage+Filters.h */,
 				B5A6454C19CE0179008BBA6B /* UIImage+Filters.m */,
-				B5139E0719CD3922004D517A /* Main.storyboard */,
 				B584680E19CD7F3200602018 /* ImageController.h */,
 				B584680F19CD7F3200602018 /* ImageController.m */,
+				B5D5150F19CE6175007B8041 /* Main.storyboard */,
+				B5D5152419CEA751007B8041 /* NewViewController.h */,
+				B5D5152519CEA751007B8041 /* NewViewController.m */,
 				B5139E0A19CD3922004D517A /* Images.xcassets */,
 				B5139E0C19CD3922004D517A /* LaunchScreen.xib */,
 				B5139DFD19CD3922004D517A /* Supporting Files */,
+				B5139E0719CD3922004D517A /* 2Main.storyboard */,
 			);
 			path = FlySwatter;
 			sourceTree = "<group>";
@@ -1203,6 +1224,19 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		B5D5151719CE9E7E007B8041 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				B5D5151819CE9E7E007B8041 /* camera.png */,
+				B5D5151919CE9E7E007B8041 /* check.png */,
+				B5D5151A19CE9E7E007B8041 /* error.png */,
+				B5D5151B19CE9E7E007B8041 /* facebook.png */,
+				B5D5151C19CE9E7E007B8041 /* loading.png */,
+				B5D5151D19CE9E7E007B8041 /* twitter.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1309,14 +1343,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5A6453619CDBBB3008BBA6B /* Pods-resources.sh in Resources */,
-				B5139E0919CD3922004D517A /* Main.storyboard in Resources */,
+				B5D5151F19CE9E7E007B8041 /* check.png in Resources */,
+				B5D5151019CE6175007B8041 /* Main.storyboard in Resources */,
+				B5139E0919CD3922004D517A /* 2Main.storyboard in Resources */,
 				B5A6453919CDBBB3008BBA6B /* Pods-TesseractOCRiOS.xcconfig in Resources */,
 				B5A6453219CDBBB3008BBA6B /* Manifest.lock in Resources */,
 				B5139E0E19CD3922004D517A /* LaunchScreen.xib in Resources */,
+				B5D5152119CE9E7E007B8041 /* facebook.png in Resources */,
 				B5A6453819CDBBB3008BBA6B /* Pods-TesseractOCRiOS-Private.xcconfig in Resources */,
+				B5D5152019CE9E7E007B8041 /* error.png in Resources */,
+				B5D5152319CE9E7E007B8041 /* twitter.png in Resources */,
 				B5A6453419CDBBB3008BBA6B /* Pods-acknowledgements.plist in Resources */,
 				B5A6454A19CDD8D6008BBA6B /* tessdata in Resources */,
+				B5D5152219CE9E7E007B8041 /* loading.png in Resources */,
 				B5A6453A19CDBBB3008BBA6B /* Pods.xcconfig in Resources */,
+				B5D5151E19CE9E7E007B8041 /* camera.png in Resources */,
 				B5139E0B19CD3922004D517A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1375,6 +1416,7 @@
 				B5139E0019CD3922004D517A /* main.m in Sources */,
 				B5A6453519CDBBB3008BBA6B /* Pods-dummy.m in Sources */,
 				B5A6453C19CDBBB3008BBA6B /* README.md in Sources */,
+				B5D5152619CEA751007B8041 /* NewViewController.m in Sources */,
 				B5A6454D19CE0179008BBA6B /* UIImage+Filters.m in Sources */,
 				B584681019CD7F3200602018 /* ImageController.m in Sources */,
 			);
@@ -1399,12 +1441,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B5139E0719CD3922004D517A /* Main.storyboard */ = {
+		B5139E0719CD3922004D517A /* 2Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B5139E0819CD3922004D517A /* Base */,
 			);
-			name = Main.storyboard;
+			name = 2Main.storyboard;
 			sourceTree = "<group>";
 		};
 		B5139E0C19CD3922004D517A /* LaunchScreen.xib */ = {

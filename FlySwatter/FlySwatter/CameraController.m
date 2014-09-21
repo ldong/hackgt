@@ -17,7 +17,11 @@
 
 @interface CameraController ()
 
+@property NSString* place;
+@property NSString* time;
+@property NSString* title;
 @property NSMutableDictionary *data;
+
 
 @end
 
@@ -66,23 +70,42 @@ NSString* imagePath;
   
 }
 
-- (void) uploadfileOnline: (UIImage *)image {
+- (void) uploadfileOnline: (UIImage *)myImage {
+  // create request
+  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+  NSString *urlString = @"http://128.61.60.170:3000";
 
-  NSString* webURL = @"http://128.61.60.170:3000/";
-  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  NSDictionary *parameters = @{@"foo": @"bar"};
+  [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+  [request setHTTPShouldHandleCookies:NO];
+  [request setTimeoutInterval:30];
+  [request setHTTPMethod:@"POST"];
+  NSString *boundary = @"------VohpleBoundary4QuqLuM1cE5lMwCy";
+
+  // set Content-Type in HTTP header
+  NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+  [request setValue:contentType forHTTPHeaderField: @"Content-Type"];
   
-  NSURL *filePath = [NSURL fileURLWithPath:imagePath];
-  [manager POST:webURL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-    [formData appendPartWithFileURL:filePath name:@"image" error:nil];
-  } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    NSLog(@"Success: %@", responseObject);
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    NSLog(@"Error: %@", error);
-  }];
+  // post body
+  NSMutableData *body = [NSMutableData data];
+  NSString *FileParamConstant = @"imageParamName";
+
+  // add image data
+  NSData *imageData = UIImageJPEGRepresentation(myImage, 1.0);
+  if (imageData) {
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"image.jpg\"\r\n", FileParamConstant] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithString:@"Content-Type: image/jpeg\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:imageData];
+    [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+  }
   
-  NSLog(@"Sent something");
+  [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
   
+  // setting the body of the post to the reqeust
+  [request setHTTPBody:body];
+  
+  // set URL
+  [request setURL:urlString];
 }
 
 - (IBAction)cancelImage:(id)sender {
@@ -154,7 +177,7 @@ NSString* imagePath;
 //       self.timestamp = [[NSCalendar currentCalendar] dateFromComponents:comps];
        
        
-       event.title =@"Event title";
+       event.title =self.title;
        event.startDate=startDate;
        //             event.endDate=endDate;
        event.endDate = [event.startDate dateByAddingTimeInterval:60*60];
@@ -216,7 +239,7 @@ NSString* imagePath;
   } else {
     NSLog(@"No FB");
     SLComposeViewController * fbSheetOBJ = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [fbSheetOBJ setInitialText:@"Post from my iOS"];
+    [fbSheetOBJ setInitialText:infoData.text];
     [fbSheetOBJ addURL:[NSURL URLWithString:@"http://hackgt.com"]];
     [fbSheetOBJ addImage:[UIImage imageNamed:@"klaus.png"]];
     
@@ -399,7 +422,7 @@ NSString* imagePath;
 //  imageView.image = resultUIImage;
 //  UIImageWriteToSavedPhotosAlbum(resultUIImage, nil, nil, nil);
   
-  /*
+  
   Tesseract* tesseract = [[Tesseract alloc] initWithDataPath:@"tessdata" language:@"eng"];
   [tesseract setImage:myImage];
   [tesseract recognize];
@@ -408,11 +431,16 @@ NSString* imagePath;
   
   NSLog(@"Parsed text: %@", [tesseract recognizedText]);
   infoData.text = [tesseract recognizedText];
-  */
-  [self dismissModalViewControllerAnimated:YES];
   
+  NSArray *lines = [infoData.text  componentsSeparatedByString: @"\n"];
+  self.title = lines[0];
+  self.time = lines[1];
+  self.place = lines[2];
+  
+  [self dismissModalViewControllerAnimated:YES];
+
   // upload image
-  [self uploadfileOnline: myImage];
+//  [self uploadfileOnline: myImage];
   
 //  infoData.text = self.data.description;
   

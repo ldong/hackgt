@@ -8,8 +8,12 @@
 
 #import "CameraController.h"
 #import "UIImage+Filters.h"
+#import "FHTTPClient.h"
+#import "AFNetworking.h"
 
 @interface CameraController ()
+
+@property NSMutableDictionary *data;
 
 @end
 
@@ -53,6 +57,43 @@
   //  }
   
   [self presentModalViewController:imagePicker animated:YES];
+  
+}
+
+- (void) uploadfileOnline: (UIImage *)image {
+//  UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+  NSString* webURL = @"http://httpbin.org/ip";
+  NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  NSDictionary *parameters = @{@"Name": @"LDONG"};
+
+  if (image != nil)
+  {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      @"test.jpg" ];
+    NSData* data = UIImagePNGRepresentation(image);
+    [data writeToFile:path atomically:YES];
+    
+    NSURL *filePath = [NSURL fileURLWithPath:path];
+    [manager POST:webURL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+      [formData appendPartWithFormData:imageData name:@"image"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+      NSLog(@"Success: %@", responseObject);
+      // parse data
+      infoData.text = responseObject;
+//      self.data = (NSMutableDictionary*)responseObject;
+      // {"data": text };
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+      NSLog(@"Error: %@", error);
+      infoData.text = error.description;
+    }];
+  }
+  
+
+  
 }
 
 - (IBAction)cancelImage:(id)sender {
@@ -95,6 +136,8 @@
   //    [self addEventToCalendar:@" "];
 }
 
+
+
 - (void) addEventToCalendar: (NSString*) text {
   EKEventStore *eventStore=[[EKEventStore alloc] init];
   
@@ -115,12 +158,19 @@
                                                                        toDate:startDate
                                                                       options:0];
        
+//       NSDateComponents *comps = [[NSDateComponents alloc] init];
+//       [comps setDay:10];
+//       [comps setMonth:10];
+//       [comps setYear:2010];
+//       self.timestamp = [[NSCalendar currentCalendar] dateFromComponents:comps];
+       
+       
        event.title =@"Event title";
        event.startDate=startDate;
        //             event.endDate=endDate;
        event.endDate = [event.startDate dateByAddingTimeInterval:60*60];
-       event.notes = @"the details of the event, any notes will will be here";
-       event.allDay=NO;
+       event.notes = [@"the details of the event, any notes will will be here" stringByAppendingString:infoData.text];
+       event.allDay= NO;
        
        [event setCalendar:[eventStore defaultCalendarForNewEvents]];
        
@@ -366,6 +416,7 @@
 //  imageView.image = resultUIImage;
 //  UIImageWriteToSavedPhotosAlbum(resultUIImage, nil, nil, nil);
   
+  /*
   Tesseract* tesseract = [[Tesseract alloc] initWithDataPath:@"tessdata" language:@"eng"];
   [tesseract setImage:myImage];
   [tesseract recognize];
@@ -373,9 +424,15 @@
   NSLog(@"%@", [tesseract recognizedText]);
   
   NSLog(@"Parsed text: %@", [tesseract recognizedText]);
-  
-  [self dismissModalViewControllerAnimated:YES];
   infoData.text = [tesseract recognizedText];
+  */
+  [self dismissModalViewControllerAnimated:YES];
+  
+  // upload image
+  [self uploadfileOnline: myImage];
+  
+//  infoData.text = self.data.description;
+  
   captureButton.hidden = true;
   accept.hidden = false;
   infoData.hidden = false;

@@ -43,6 +43,7 @@
 		B5D5152219CE9E7E007B8041 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D5151C19CE9E7E007B8041 /* loading.png */; };
 		B5D5152319CE9E7E007B8041 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D5151D19CE9E7E007B8041 /* twitter.png */; };
 		B5D5152619CEA751007B8041 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D5152519CEA751007B8041 /* NewViewController.m */; };
+		B5E2DA8219CECCC500E5ADB9 /* libPods-FHTTPClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E2DA8119CECCC500E5ADB9 /* libPods-FHTTPClient.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		BB4F57926BE54DFD83356DC5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E064934393654BE18F1E74C6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = EA6230EF0E9C49E683B0E12C;
 			remoteInfo = "Pods-TesseractOCRiOS";
+		};
+		B5E2DA8019CECCC500E5ADB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A6449319CDBBB3008BBA6B /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 822A2CE9A5CF48869798A720;
+			remoteInfo = "Pods-FHTTPClient";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -563,6 +571,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E2DA8219CECCC500E5ADB9 /* libPods-FHTTPClient.a in Frameworks */,
 				B581CFB419CE17F000E23EC2 /* Foundation.framework in Frameworks */,
 				B581CFB219CE17C900E23EC2 /* CoreGraphics.framework in Frameworks */,
 				B581CFB019CE176400E23EC2 /* UIKit.framework in Frameworks */,
@@ -1015,6 +1024,7 @@
 			isa = PBXGroup;
 			children = (
 				B5A6454219CDBBB3008BBA6B /* libPods.a */,
+				B5E2DA8119CECCC500E5ADB9 /* libPods-FHTTPClient.a */,
 				B5A6454419CDBBB3008BBA6B /* libPods-TesseractOCRiOS.a */,
 			);
 			name = Products;
@@ -1333,6 +1343,13 @@
 			fileType = archive.ar;
 			path = "libPods-TesseractOCRiOS.a";
 			remoteRef = B5A6454319CDBBB3008BBA6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5E2DA8119CECCC500E5ADB9 /* libPods-FHTTPClient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-FHTTPClient.a";
+			remoteRef = B5E2DA8019CECCC500E5ADB9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

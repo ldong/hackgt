@@ -1,12 +1,14 @@
 # README
 
-## Installation
+This is an iOS native App implemented using Objective-C
 
-1. `npm install -g cordova ionic`
+It automatically add flyers to Apple Calendar.
 
-2. Go to FlySwatter install camera plugin `cordova plugin add org.apache.cordova.camera`
+Technologies used are:
 
-## Reference
+1. Tessrect: image processing and OCR.
 
-[Cordova camera]
-(http://learn.ionicframework.com/formulas/cordova-camera/)
+2. NodeJS: server side
+
+Screenshots at [hackGT](http://hackgt2014.challengepost.com/submissions/27229-flyswatter)
+

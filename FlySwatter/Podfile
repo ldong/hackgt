@@ -1,8 +1,0 @@
-platform :ios, '7.0'
-
-pod 'TesseractOCRiOS', '~> 2.2'
-pod 'FHTTPClient', '~> 0.0.1'
-pod "AFNetworking", "~> 2.0"
-pod 'MKNetworkKit'
-
-xcodeproj 'FlySwatter.xcodeproj'
